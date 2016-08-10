@@ -1,0 +1,18 @@
+---
+- name: example ansible playbook with envs
+  hosts: all
+  connection: local
+
+  vars_files:
+
+    - envs/{{ environ }}.yml
+    - secrets/{{ environ }}.yml
+
+  tasks:
+
+    - debug: var=environ
+
+    - debug: var=state
+
+    - debug: var=dbpass
+
